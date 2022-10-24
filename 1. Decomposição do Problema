@@ -1,0 +1,56 @@
+//Realização a decomposição do Problema
+Problema: 
+    O SISTEMA DE SAÚDE DO PAÍS PDA ESTÁ EM COLAPSO!!! 
+    A FILA PARA O ATENDIMENTO DIÁRIO DE EMERGÊNCIA NÃO TEM NENHUM CRITÉRIO OU ORDEM.
+    PRECISAMOS RESOLVER ISSO DE FORMA LÓGICA, PRA JÁ!
+
+Proposta de Solução:
+    Criar um algoritmo para o sistema de emergência hospitalar, solucionando a desordem de forma tal que cada 
+    paciente ao passar pela triagem recebe uma classificação de risco para definir a prioridade do atendimento, 
+    se necessário será solicitado a transferência do paciente para um hospital especializado, logo depois da 
+    passagem pela triagem, o paciente esperará para ser atendido por um médico qualificado. Em situações que 
+    não caracterizem emergência, ou seja, que não exigem atendimento imediato, ou urgências com fluxos não 
+    prioritários, os usuários podem ser orientados a procurar as Unidades Básicas de Saúde ou Unidades de 
+    Pronto Atendimento de sua região. 
+        A prioridade é definida pelas cores:
+            vermelho 
+            laranja 
+            amarelo 
+            verde 
+            azul 
+
+        Cada qual com um determinado tempo de espera tolerável, com os seguintes significados:
+            • Vermelho: quadro clínico implica em risco de morte, e que o caso deve ser rapidamente encaminhado 
+            para a sala de emergência.
+            — Vermelho: Atendimento imediato.
+
+            • Laranja e amarelo: o paciente não tem risco iminente de morte, mas o atendimento é prioritário, 
+            pois o tempo de espera pode aumentar a gravidade do caso. 
+            Atendimento com tempo de espera tolerável de: 
+            — Laranja: até 10 minutos.
+            — Amarelo: até 20 minutos.
+
+            • Verde: não há risco de morte e o paciente deverá ser atendido após os casos vermelhos, laranjas 
+            e amarelos. 
+            Atendimento com tempo de espera tolerável de:
+            — Verde: até 60 minutos.
+
+            • Azul: quadros crônicos, sem sofrimento agudo. Neste caso, o paciente será encaminhado ao centro de 
+            saúde se a emergência estiver lotada.
+            Poderá ser realizado em:
+            — Azul: encaminhamento para Unidades Básicas de Saúde ou 60 minutos.
+
+        Fluxo de atendimento:
+            Recepção: etapa onde serão realizados a inserção dos dados do paciente para ser realizada a chamada da 
+            triagem e posteriormente para o atendimento médico.
+
+            Triagem: etapa de classificação de risco feita por um enfermeiro. Nesta etapa é definida a ordem de 
+            prioridade do atendimento.
+
+            Atendimento médico: etapa onde será realizada a consulta do paciente.
+
+    Para cada pessoa que chega, uma prioridade será definida, e essa pessoa é alocada a um médico.
+    Cada médico demora um certo tempo (dentro de um intervalo esperado) para atender um paciente, e
+    por meio desse tempo o programa irá simular o tempo de atendimento e espera de pacientes.
+    A partir do tempo de espera tolerável de cada cor (descrito anteriormente) é possível saber se há
+    uma demanda maior do que a capacidade do hospital.

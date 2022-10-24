@@ -1,0 +1,109 @@
+//boas-vindas e informações
+escreva ("Seja bem-vindo!")
+escreva ("Por favor realize o preenchimento das informações corretas do paciente!")
+
+//consultar cadastro paciente
+escreva ("CPF: ")
+leia(cpfPaciente)
+
+SE (paciente = cadastrado) ENTAO
+escreva ("Paciente já cadastrado!")
+ir para gerar senha 
+SENAO
+escrava("Paciente não cadastrado!")
+ir para cadastramento
+
+//cadastramento paciente
+escreva ("Nome: ")
+leia(nomePaciente) 
+
+escreva ("Sobrenome: ")
+leia(sobrenomePaciente) 
+
+escreva ("RG: ")
+leia(rgPaciente)
+
+escreva ("Data de Nascimento: ")
+leia(nascimentoPaciente)
+
+escreva ("Gênero: ")
+leia(generoPaciente) 
+
+escreva ("Número de telefone: ")
+leia(telefonePaciente)
+
+SE (campos == corretos) ENTAO
+realizar cadastramento do paciente 
+paciente = cadastro
+escreva("Paciente cadastrado!")
+SENAO
+escreva("Informações de cadastro incorretas.")
+
+//gerar senha 
+SE (paciente = cadastro) ENTAO
+escreva("Senha: ", senha i++)
+SENAO
+escreva("Erro.")
+
+SE (paciente = senha) ENTAO
+escreva("Venha para a seção de Triagem! SALA:11")
+SENAO 
+escreva("Em espera para realização da Triagem.")
+
+//triagem
+SE (paciente = sala11) ENTAO
+escreva ("Escolha a prioridade: ")
+
+ESCOLHA <Vermelha, Laranja, Amarela, Verde, Azul, Transferencia>
+CASO "Transferencia"
+resultado: escreva("hospital não tem a infraestrutura adequada par atender este paciente")
+contactar hospital especializado 
+
+CASO "Vermelha"
+resultado: escreva("atendimento imediato")
+
+CASO "Laranja"
+resultado: escreva("esperar 10 min para atendimento")
+gerar senha
+
+CASO "Amarela" 
+resultado: escreva("esperar 1 hora para atendimento")
+gerar senha
+
+CASO "Verde" 
+resultado: escreva("esperar 2 horas para atendimento")
+gerar senha
+
+CASO "Azul"
+resultado: 
+SE (emergencia = lotada) ENTAO
+escreva("encaminhamento para Unidades Básicas de Saúde")
+SENAO
+   SE (tempo == expirado) ENTAO
+escreva("encaminhamento para Unidades Básicas de Saúde")
+   SENAO
+escreva("esperar 4 horas para atendimento")
+gerar senha
+
+OUTROCASO
+      escreva("A prioridade digitada é inválida!")
+
+ESCREVA ("Resultado: ", resultadoTriagem)
+
+//senhaMedica
+SE (paciente = prioridade+senha) ENTAO
+escreva ("chamar paciente", nomePaciente)
+SENAO
+escreva ("paciente em espera.")
+
+//atendimento
+SE (paciente = chamado) ENTAO
+escreva ("paciente em consulta")
+SENAO 
+escreva ("paciente em espera para consulta")
+
+//saida do sistema
+SE (paciente = atendido) ENTAO
+escreva ("paciente liberado")
+SENAO 
+escreva ("paciente em atendimento, aguardando a liberação do médico")
